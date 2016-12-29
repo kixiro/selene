@@ -10,14 +10,14 @@ from selene.browsers import Browser
 
 def is_driver_initialized(name):
     try:
-        return selene.tools.get_driver().name == name
+        return selene.selene_driver._shared_web_driver_source.driver.name == name
     except AttributeError:
         return False
 
 
-def start_browser(name):
+def ensure_browser_started(name):
     if is_driver_initialized(name):
-        return selene.tools.get_driver()
+        return
 
     atexit._run_exitfuncs()
     if name == Browser.CHROME:

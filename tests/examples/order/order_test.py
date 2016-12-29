@@ -1,19 +1,15 @@
 import os
 
 from selene import config
-from selene.tools import set_driver, get_driver
-from tests.acceptance.helpers.helper import get_test_driver
 from tests.examples.order.app_model.order_widgets import Order
 
 
 def setup_function(m):
     config.timeout = 4
-    set_driver(get_test_driver())
     config.app_host = 'file://' + os.path.abspath(os.path.dirname(__file__)) + '/../../resources/orderapp/'
 
 
 def teardown_function(m):
-    get_driver().quit()
     config.app_host = ''
 
 

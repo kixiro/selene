@@ -1,16 +1,7 @@
 from selene.conditions import exact_text, hidden, exact_texts
-from selene.tools import set_driver, get_driver, ss, s
+from selene.tools import ss, s
 
-from tests.acceptance.helpers.helper import get_test_driver
 from tests.acceptance.helpers.todomvc import given_active
-
-
-def setup_module(m):
-    set_driver(get_test_driver())
-
-
-def teardown_module(m):
-    get_driver().quit()
 
 
 class Task(object):

@@ -1,12 +1,9 @@
 # Changelog
 
 ## 1.0.0 (from master branch)
-- internal
-  - improved test coverage
-    - added "given-helpers" for preconditions for atomic tests
-  - completely refactored implementation to be more structural and solid
-    - on the way found non-stable behavior of old implementation and fixed it
 - new features:
+  - automatic driver management (thanks to PR from @SergeyPirogov)
+    - including automatic installation of needed drivers via [webdriver_manager](https://github.com/SergeyPirogov/webdriver_manager)
   - object oriented paradigm is now supported in context of webdriver usage
     - Don't like "static" s, ss helpers (from selene.tools module) using global driver instance set by set_driver(...)?
     - now you can use driver.element, driver.all correspondingly
@@ -21,6 +18,11 @@
     - it's mandatory to use get_driver(...) from selene.tools for this
   - naming changes:
     - tbd...
+- internal
+  - improved test coverage
+    - added "given-helpers" for preconditions for atomic tests
+  - completely refactored implementation to be more structural and solid
+    - on the way found non-stable behavior of old implementation and fixed it
 
 ## 0.0.8 (released 08.12.2016)
 - locked the selenium version to 2.53.1

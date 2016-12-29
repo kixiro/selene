@@ -18,6 +18,7 @@ def set_driver(driver):
 
 def get_driver():
     # type: () -> WebDriver
+    selene.factory.ensure_browser_started(selene.config.browser_name)
     return selene.driver._shared_web_driver_source.driver
 
 
@@ -36,7 +37,6 @@ def visit(absolute_or_relative_url):
         visit('/subpage1')
         visit('/subpage2')
     """
-    selene.factory.start_browser(selene.config.browser_name)
     get_driver().get(config.app_host + absolute_or_relative_url)
 
 
